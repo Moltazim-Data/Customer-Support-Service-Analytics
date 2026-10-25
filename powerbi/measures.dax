@@ -1,0 +1,24 @@
+Total Tickets = DISTINCTCOUNT(support_tickets[ticket_id])
+
+Open Backlog =
+CALCULATE(
+    [Total Tickets],
+    FILTER(support_tickets, NOT(support_tickets[status] IN {"Resolved", "Closed"}))
+)
+
+First Response SLA Rate =
+DIVIDE(
+    CALCULATE(COUNTROWS(support_tickets), support_tickets[sla_eligible] = TRUE(), support_tickets[first_response_sla_met] = TRUE()),
+    CALCULATE(COUNTROWS(support_tickets), support_tickets[sla_eligible] = TRUE(), NOT(ISBLANK(support_tickets[first_response_sla_met])))
+)
+
+Resolution SLA Rate =
+DIVIDE(
+    CALCULATE(COUNTROWS(support_tickets), support_tickets[sla_eligible] = TRUE(), support_tickets[resolution_sla_met] = TRUE()),
+    CALCULATE(COUNTROWS(support_tickets), support_tickets[sla_eligible] = TRUE(), NOT(ISBLANK(support_tickets[resolution_sla_met])))
+)
+
+Average Response Hours = AVERAGE(support_tickets[response_hours])
+Average Resolution Hours = AVERAGE(support_tickets[resolution_hours])
+Average CSAT = AVERAGE(support_tickets[csat_score])
+Tickets Created = [Total Tickets]
