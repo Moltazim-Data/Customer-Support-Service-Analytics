@@ -1,0 +1,17 @@
+Validation results
+==================
+Tickets: 2,400
+Agents: 12
+Open backlog: 725
+First-response SLA rate: 69.4%
+Resolution SLA rate: 68.1%
+Average resolution hours: 42.9
+Average CSAT: 4.02 / 5
+Unit tests: PASS (5 tests)
+
+Reproduce:
+  python src/generate_data.py
+  python src/analyze_support.py
+  python -m unittest discover -s tests -v
+
+All figures are synthetic demonstration results, not real company performance.
