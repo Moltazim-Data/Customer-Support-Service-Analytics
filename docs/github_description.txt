@@ -1,0 +1,1 @@
+Customer Support & Service Operations Analytics | Python, SQL, Power BI, SLA, backlog, CSAT, and data quality using realistic synthetic data.
