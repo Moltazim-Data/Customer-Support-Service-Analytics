@@ -47,3 +47,8 @@ Suggested pages: Executive Overview; Demand & Mix; SLA & Efficiency; Backlog & T
 - This repository does not include a native `.pbix` or deployed Power BI report.
 
 MIT License. See `LICENSE`.
+
+## Reports and results
+- [Analysis results and synthetic KPI snapshot](reports/analysis_results.md)
+- [Validation results](docs/validation_results.txt)
+- [Power BI dashboard preview](powerbi/dashboard_preview.html)
